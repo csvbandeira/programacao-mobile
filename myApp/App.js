@@ -1,10 +1,13 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { View, Text, Image } from "react-native";
 
 const App = () => {
   return (
     <View>
-      <Text>Teste com o componente TEXT</Text>
+      <Image
+        source={require("./assets/img/img1.png")}
+        style={{ width: 200, height: 100 }}
+      ></Image>
     </View>
   );
 };
