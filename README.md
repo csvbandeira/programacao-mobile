@@ -1,6 +1,6 @@
 # Programação Mobile
 
-## Criando o projeto (rodando pela primeira vez!)
+## Criando o projeto
 
 1. Crie o projeto
 
@@ -8,21 +8,25 @@
 npx create-expo-app myApp --template blank
 ```
 
-2. Entre no projeto myApp e instale o "react-dom", "react-native" e o "expo"
+2. Entre no projeto myApp
 
 ```bash
 cd myApp
-
-npx expo install react-dom react-native-web @expo/metro-runtime
 ```
 
-3. Inicie a execução do projeto
+3.Instale o "react-dom", "react-native" e o "expo"
+
+```bash
+ npx expo install react-dom react-native-web @expo/metro-runtime
+```
+
+4. Inicie a execução do projeto
 
 ```bash
  npx expo start
 ```
 
-## Rodando o projeto (só com projeto criado)
+## Rodando o projeto
 
 1. Entre no projeto myApp
 
@@ -30,13 +34,7 @@ npx expo install react-dom react-native-web @expo/metro-runtime
  cd myApp
 ```
 
-2. Instale as dependências
-
-```bash
- npm i
-```
-
-3. Inicie a execução do projeto
+2. Inicie a execução do projeto
 
 ```bash
  npx expo start
