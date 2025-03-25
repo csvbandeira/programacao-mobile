@@ -93,6 +93,24 @@ function App() {
           e o posicionamento;{"\n"}- Alterando margens e espaçamentos, etc...
         </Text>
       </View>
+      <View
+        style={{
+          width: "100%",
+          height: "absolute",
+          bottom: 15,
+          alignItems: "center",
+          backgroundColor: "white",
+          padding: 20,
+        }}
+      >
+        <Image
+          source={{ uri: "https://izap.com.br/uploads/google-logoblog.png" }}
+          style={{ width: 200, height: 100 }}
+        />
+        <View style={{ flexDirection: "row" }}>
+          Carlos Victor Bandeira - 2025
+        </View>
+      </View>
     </View>
   );
 }
