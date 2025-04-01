@@ -2,6 +2,8 @@ import React from "react";
 import { View, Text, Image } from "react-native";
 
 function App() {
+  const content =
+    " Lorem Ipsum is simply dummy text of the printing and typesetting industry";
   return (
     <View
       style={{
@@ -51,10 +53,7 @@ function App() {
             />
           </View>
           <View style={{ height: "50%", width: "100%" }}>
-            <Text style={{ color: "white" }}>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry
-            </Text>
+            <Text style={{ color: "white" }}>{content}</Text>
           </View>
         </View>
         <View
@@ -139,10 +138,7 @@ function App() {
                 style={{ height: "75%", width: "40%", borderRadius: 15 }}
                 source={require("./assets/img/img1.png")}
               />
-              <Text style={{ height: "75%", width: "55%" }}>
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry.
-              </Text>
+              <Text style={{ height: "75%", width: "55%" }}>{content}</Text>
             </View>
             <View
               style={{
@@ -157,10 +153,7 @@ function App() {
                 style={{ height: "75%", width: "40%", borderRadius: 15 }}
                 source={require("./assets/img/img1.png")}
               />
-              <Text style={{ height: "75%", width: "55%" }}>
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry.
-              </Text>
+              <Text style={{ height: "75%", width: "55%" }}>{content}</Text>
             </View>
             <View
               style={{
@@ -175,10 +168,7 @@ function App() {
                 style={{ height: "75%", width: "40%", borderRadius: 15 }}
                 source={require("./assets/img/img1.png")}
               />
-              <Text style={{ height: "75%", width: "55%" }}>
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry.
-              </Text>
+              <Text style={{ height: "75%", width: "55%" }}>{content}</Text>
             </View>
           </View>
         </View>
