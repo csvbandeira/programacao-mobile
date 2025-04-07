@@ -78,6 +78,9 @@ const App = () => {
           source={require("./assets/img/formula-1.png")}
           style={{ height: "100%", width: "75%", borderRadius: 20 }}
         />
+        <Text style={{ fontSize: 16, color: "white", fontWeight: "bold" }}>
+          CLASSIFICAÇÃO GERAL
+        </Text>
       </View>
       <View
         style={{
