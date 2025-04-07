@@ -3,11 +3,11 @@ import { View, Text, Image } from "react-native";
 
 const App = () => {
   const drivers = [
-    { position: 1, name: "Max Verstappen", bestTime: "01:11:09" },
-    { position: 2, name: "Max Verstappen", bestTime: "01:11:45" },
-    { position: 3, name: "Max Verstappen", bestTime: "01:11:99" },
-    { position: 4, name: "Max Verstappen", bestTime: "01:12:12" },
-    { position: 5, name: "Max Verstappen", bestTime: "01:13:01" },
+    { position: 1, name: "Lando Norris", point: 62 },
+    { position: 2, name: "Max Verstappen", point: 61 },
+    { position: 3, name: "Oscar Piastri", point: 49 },
+    { position: 4, name: "George Russell", point: 45 },
+    { position: 5, name: "A. Kimi Antonelli", point: 30 },
   ];
 
   let Content = null;
@@ -38,11 +38,21 @@ const App = () => {
           >
             {drivers[i].position}
           </Text>
-          <Text style={{ fontSize: 20, fontWeight: "bold" }}>
+          <Text
+            style={{
+              fontSize: 20,
+              fontWeight: "bold",
+            }}
+          >
             {drivers[i].name.toUpperCase()}
           </Text>
-          <Text style={{ fontSize: 16, fontWeight: "semi-bold" }}>
-            {drivers[i].bestTime}
+          <Text
+            style={{
+              fontSize: 16,
+              fontWeight: "bold",
+            }}
+          >
+            {drivers[i].point}
           </Text>
         </View>
       </>
@@ -87,8 +97,16 @@ const App = () => {
           width: "100%",
           backgroundColor: "black",
           padding: 10,
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "space-between",
+          alignItems: "center",
         }}
-      ></View>
+      >
+        <Text style={{ color: "white", fontWeight: "bold" }}>POSIÇÃO</Text>
+        <Text style={{ color: "white", fontWeight: "bold" }}>PILOTO</Text>
+        <Text style={{ color: "white", fontWeight: "bold" }}>PONTUAÇÃO</Text>
+      </View>
     </View>
   );
 };
