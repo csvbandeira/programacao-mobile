@@ -86,10 +86,13 @@ const App = () => {
         style={{
           height: "70%",
           width: "100%",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "space-around",
+          alignItems: "center",
           backgroundColor: "red",
           margin: "auto",
           padding: 10,
-          gap: 5,
         }}
       >
         {Content}
