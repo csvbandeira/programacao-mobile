@@ -1,117 +1,63 @@
 import React from "react";
-import { View, Text, Image } from "react-native";
+import { View, Text, Image, StyleSheet } from "react-native";
 
 const App = () => {
-  const drivers = [
-    { position: 1, name: "Lando Norris", point: 62 },
-    { position: 2, name: "Max Verstappen", point: 61 },
-    { position: 3, name: "Oscar Piastri", point: 49 },
-    { position: 4, name: "George Russell", point: 45 },
-    { position: 5, name: "A. Kimi Antonelli", point: 30 },
-  ];
+  const style = StyleSheet.create({
+    screen: {
+      paddingTop: 30,
+      paddingHorizontal: 10,
+      flex: 1,
+      backgroundColor: "powderblue",
+    },
+    header: {
+      flex: 0.15,
+      backgroundColor: "white",
+      display: "flex",
+      flexDirection: "row",
+      alignItems: "center",
+      justifyContent: "space-between",
+      paddingHorizontal: 20,
+    },
+    center: {
+      flex: 0.75,
+      backgroundColor: "green",
+    },
+    footer: {
+      flex: 0.1,
+      backgroundColor: "black",
+    },
+  });
 
-  let Content = null;
-
-  for (let i = 0; i < drivers.length; i++) {
-    Content = (
-      <>
-        {Content}
+  return (
+    <View style={style.screen}>
+      <View style={style.header}>
         <View
-          key={i}
           style={{
-            height: "19%",
-            width: "100%",
             display: "flex",
             flexDirection: "row",
             alignItems: "center",
-            justifyContent: "space-around",
-            padding: 10,
-            backgroundColor: "white",
-            borderRadius: 20,
           }}
         >
-          <Text
+          <Image
+            source={require("./assets/img/myUser.png")}
             style={{
-              fontSize: 24,
-              fontWeight: "semi-bold",
+              width: 48,
+              height: 60,
+              resizeMode: "contain",
             }}
-          >
-            {drivers[i].position}
-          </Text>
-          <Text
-            style={{
-              fontSize: 20,
-              fontWeight: "bold",
-            }}
-          >
-            {drivers[i].name.toUpperCase()}
-          </Text>
-          <Text
-            style={{
-              fontSize: 16,
-              fontWeight: "bold",
-            }}
-          >
-            {drivers[i].point}
-          </Text>
+          />
+          <Text style={{ marginLeft: 15 }}>NOME SOBRENOME</Text>
         </View>
-      </>
-    );
-  }
-
-  return (
-    <View style={{ height: "100%", width: "100%" }}>
-      <View
-        style={{
-          height: "20%",
-          width: "100%",
-          backgroundColor: "black",
-          paddingVertical: 20,
-          paddingHorizontal: 10,
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
         <Image
-          source={require("./assets/img/formula-1.png")}
-          style={{ height: "100%", width: "75%", borderRadius: 20 }}
+          source={require("./assets/img/myUser2.png")}
+          style={{ height: 30, width: 20 }}
         />
-        <Text style={{ fontSize: 16, color: "white", fontWeight: "bold" }}>
-          CLASSIFICAÇÃO GERAL
-        </Text>
       </View>
-      <View
-        style={{
-          height: "70%",
-          width: "100%",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "space-around",
-          alignItems: "center",
-          backgroundColor: "red",
-          margin: "auto",
-          padding: 10,
-        }}
-      >
-        {Content}
+      <View style={style.center}>
+        <Text>Conteúdo</Text>
       </View>
-      <View
-        style={{
-          height: "10%",
-          width: "100%",
-          backgroundColor: "black",
-          padding: 10,
-          display: "flex",
-          flexDirection: "row",
-          justifyContent: "space-between",
-          alignItems: "center",
-        }}
-      >
-        <Text style={{ color: "white", fontWeight: "bold" }}>POSIÇÃO</Text>
-        <Text style={{ color: "white", fontWeight: "bold" }}>PILOTO</Text>
-        <Text style={{ color: "white", fontWeight: "bold" }}>PONTUAÇÃO</Text>
+      <View style={style.footer}>
+        <Text style={{ color: "white" }}>Footer</Text>
       </View>
     </View>
   );
