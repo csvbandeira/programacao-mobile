@@ -4,7 +4,7 @@ import Style from "../styles/style";
 
 const Footer = () => {
   const author = "Carlos Victor Bandeira";
-  const date = "Abril/2025";
+  const date = "April/2025";
 
   return (
     <View id="footer" style={Style.footer}>

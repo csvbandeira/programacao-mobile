@@ -1,12 +1,27 @@
-import { View, Text } from "react-native";
+import { ScrollView } from "react-native";
 
 import Style from "../styles/style.js";
+import Card from "./Card.js";
 
 const Body = () => {
   return (
-    <View id="body" style={Style.body}>
-      <Text>Content</Text>
-    </View>
+    <ScrollView style={Style.body}>
+      <Card
+        Words={"TEXT 01"}
+        ColorForWords={"yellow"}
+        ColorForBackground={"black"}
+      />
+      <Card
+        Words={"TEXT 02"}
+        ColorForWords={"black"}
+        ColorForBackground={"yellow"}
+      />
+      <Card
+        Words={"TEXT 03"}
+        ColorForWords={"red"}
+        ColorForBackground={"orange"}
+      />
+    </ScrollView>
   );
 };
 
