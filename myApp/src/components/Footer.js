@@ -2,14 +2,11 @@ import { View, Text } from "react-native";
 
 import Style from "../styles/style";
 
-const Footer = () => {
-  const author = "Carlos Victor Bandeira";
-  const date = "April/2025";
-
+const Footer = ({ Author, Date }) => {
   return (
     <View id="footer" style={Style.footer}>
-      <Text style={Style.footerAuthor}>{author}</Text>
-      <Text style={Style.footerAuthor}>{date}</Text>
+      <Text style={Style.footerAuthor}>{Author}</Text>
+      <Text style={Style.footerAuthor}>{Date}</Text>
     </View>
   );
 };

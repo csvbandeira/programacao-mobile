@@ -9,9 +9,9 @@ import Footer from "./src/components/Footer";
 const App = () => {
   return (
     <View id="background" style={Style.background}>
-      <Header />
+      <Header Path={require("./assets/img/img1.png")} />
       <Body />
-      <Footer />
+      <Footer Author={"Carlos Victor Bandeira"} Date={"April/2025"} />
     </View>
   );
 };
