@@ -4,52 +4,49 @@ import Style from "../styles/style.js";
 import Card from "./Card.js";
 
 const Body = () => {
-  return (
-    <ScrollView style={Style.body}>
-      <Card
-        Words={"TEXT 01"}
-        ColorForWords={"yellow"}
-        ColorForBackground={"black"}
-        Height={100}
-        Width={"100%"}
-      />
-      <Card
-        Words={"TEXT 02"}
-        ColorForWords={"black"}
-        ColorForBackground={"yellow"}
-        Height={50}
-        Width={"50%"}
-      />
-      <Card
-        Words={"TEXT 03"}
-        ColorForWords={"red"}
-        ColorForBackground={"orange"}
-        Height={75}
-        Width={"75%"}
-      />
-      <Card
-        Words={"TEXT 04"}
-        ColorForWords={"black"}
-        ColorForBackground={"green"}
-        Height={60}
-        Width={"60%"}
-      />
-      <Card
-        Words={"TEXT 05"}
-        ColorForWords={"blue"}
-        ColorForBackground={"gray"}
-        Height={25}
-        Width={"25%"}
-      />
-      <Card
-        Words={"TEXT 06"}
-        ColorForWords={"white"}
-        ColorForBackground={"purple"}
-        Height={80}
-        Width={"80%"}
-      />
-    </ScrollView>
-  );
+	const wordsText = [
+		"Luiz",
+		"Marcos",
+		"Andréia",
+		"Janaína",
+		"Wagner",
+		"Patrícia",
+	];
+	const colorsForWords = ["yellow", "black", "red", "black", "blue", "white"];
+	const colorsForBackground = [
+		"black",
+		"yellow",
+		"orange",
+		"green",
+		"gray",
+		"purple",
+	];
+	const heights = [100, 50, 75, 60, 30, 80];
+	const widths = ["100%", "50%", "75%", "60%", "25%", "80%"];
+	const roles = [
+		"Desenvolvedor",
+		"Designer",
+		"Gerente",
+		"Testador",
+		"Analista",
+		"Suporte",
+	];
+
+	return (
+		<ScrollView style={Style.body}>
+			{wordsText.map((word, index) => (
+				<Card
+					key={index}
+					Words={word}
+					ColorForWords={colorsForWords[index]}
+					ColorForBackground={colorsForBackground[index]}
+					Height={heights[index]}
+					Width={widths[index]}
+					SubWords={roles[index]}
+				/>
+			))}
+		</ScrollView>
+	);
 };
 
 export default Body;
