@@ -14,7 +14,7 @@ npx create-expo-app myApp --template blank
 cd myApp
 ```
 
-3.Instale o "react-dom", "react-native" e o "expo"
+3.Caso não tenha, instale o "react-dom", "react-native" e o "expo"
 
 ```bash
  npx expo install react-dom react-native-web @expo/metro-runtime
