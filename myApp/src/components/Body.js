@@ -7,28 +7,28 @@ const Body = () => {
 	const notices = [
 		{
 			title: "NOTÍCIA DE ÚLTIMA HORA",
-			news: "Grande tempestade atinge a costa",
-			date: "10/03/2023",
+			news: "Grande tempestade atinge a Paranágua",
+			date: "04/05/2025",
 		},
 		{
 			title: "ATUALIZAÇÃO MUNDIAL",
-			news: "Mercados globais apresentam forte alta",
-			date: "09/03/2023",
+			news: "Neymar para guerra na Ucrânia!",
+			date: "06/05/2025",
 		},
 		{
 			title: "TECNOLOGIA",
-			news: "Novo modelo de IA lançado",
-			date: "08/03/2023",
+			news: "DeepSeek melhor que ChatGPT?",
+			date: "05/05/2025",
 		},
 		{
 			title: "ESPORTES",
-			news: "Time local vence campeonato",
-			date: "07/03/2023",
+			news: "Coritiba encaminha vaga para o Super Mundial de Clubes",
+			date: "05/05/2025",
 		},
 		{
 			title: "ENTRETENIMENTO",
-			news: "Ator famoso anuncia novo filme",
-			date: "06/03/2023",
+			news: "Michael Jackson é encontrado em Xique-Xique, na Bahia",
+			date: "05/05/2025",
 		},
 	];
 
