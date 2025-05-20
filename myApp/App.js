@@ -1,19 +1,30 @@
-import { View } from "react-native";
+import { useState } from "react";
+import { Text, View } from "react-native";
 
-import Style from "./src/styles/style";
-
-import Header from "./src/components/Header";
 import Body from "./src/components/Body";
-import Footer from "./src/components/Footer";
+import { Styles } from "./src/styles/style";
 
-const App = () => {
-  return (
-    <View id="background" style={Style.background}>
-      <Header Path={require("./assets/img/img1.png")} />
-      <Body />
-      <Footer Author={"Carlos Victor Bandeira"} Date={"April/2025"} />
-    </View>
-  );
-};
+function App() {
+	const [saudacao, setSaudacao] = useState("");
+
+	function capturaNome(texto_digitado) {
+		if (texto_digitado.length > 0) {
+			setSaudacao("olá " + texto_digitado + "\nSeja bem vindo!");
+		} else {
+			setSaudacao("");
+		}
+	}
+
+	return (
+		<View style={Styles.area_fundo}>
+			<View style={Styles.cabecalho}>
+				<Text style={Styles.cabTitulo}>Aula 06</Text>
+				<Text style={Styles.cabSubTitulo}>Componente TextInput</Text>
+			</View>
+
+			<Body />
+		</View>
+	);
+}
 
 export default App;

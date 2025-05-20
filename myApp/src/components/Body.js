@@ -1,52 +1,87 @@
-import { ScrollView } from "react-native";
+import { Text, ScrollView } from "react-native";
+import { Styles } from "./../styles/style";
+import TextField from "./TextField";
 
-import Style from "../styles/style.js";
-import Card from "./Card.js";
-
-const Body = () => {
-	const wordsText = [
-		"Luiz",
-		"Marcos",
-		"Andréia",
-		"Janaína",
-		"Wagner",
-		"Patrícia",
-	];
-	const colorsForWords = ["yellow", "black", "red", "black", "blue", "white"];
-	const colorsForBackground = [
-		"black",
-		"yellow",
-		"orange",
-		"green",
-		"gray",
-		"purple",
-	];
-	const heights = [100, 50, 75, 60, 30, 80];
-	const widths = ["100%", "50%", "75%", "60%", "25%", "80%"];
-	const roles = [
-		"Desenvolvedor",
-		"Designer",
-		"Gerente",
-		"Testador",
-		"Analista",
-		"Suporte",
+function Body() {
+	const textFieldsData = [
+		{
+			pHol: "Digite seu nome",
+			aCap: "characters",
+			cMax: "30",
+			kTyp: "default",
+			edit: "true",
+			segT: "false",
+			mLin: "false",
+		},
+		{
+			pHol: "Qual a sua idade",
+			aCap: "none",
+			cMax: "2",
+			kTyp: "number-pad",
+			edit: "true",
+			segT: "false",
+			mLin: "false",
+		},
+		{
+			pHol: "CPF:999.999.999-00",
+			aCap: "none",
+			cMax: "0",
+			kTyp: "number-pad",
+			edit: "false",
+			segT: "false",
+			mLin: "false",
+		},
+		{
+			pHol: "Digite seu email",
+			aCap: "none",
+			cMax: "50",
+			kTyp: "email-address",
+			edit: "true",
+			segT: "false",
+			mLin: "false",
+		},
+		{
+			pHol: "Digite seu número celular",
+			aCap: "none",
+			cMax: "50",
+			kTyp: "phone-pad",
+			edit: "true",
+			segT: "false",
+			mLin: "false",
+		},
+		{
+			pHol: "Observações",
+			aCap: "sentences",
+			cMax: "200",
+			kTyp: "default",
+			edit: "true",
+			segT: "false",
+			mLin: "true",
+		},
+		{
+			pHol: "Digite sua senha",
+			aCap: "none",
+			cMax: "5",
+			kTyp: "default",
+			edit: "true",
+			segT: "true",
+			mLin: "false",
+		},
 	];
 
 	return (
-		<ScrollView style={Style.body}>
-			{wordsText.map((word, index) => (
-				<Card
-					key={index}
-					Words={word}
-					ColorForWords={colorsForWords[index]}
-					ColorForBackground={colorsForBackground[index]}
-					Height={heights[index]}
-					Width={widths[index]}
-					SubWords={roles[index]}
-				/>
+		<ScrollView style={Styles.corpo}>
+			<Text style={Styles.paragrafo}>Preencha os campos abaixo:</Text>
+
+			{textFieldsData.map((props, idx) => (
+				<TextField key={idx} {...props} />
 			))}
+
+			<Text style={[Styles.paragrafo, { color: "red" }]}>
+				Note que o campo do CPF não pode ser alterado!
+			</Text>
 		</ScrollView>
 	);
-};
+}
 
 export default Body;
