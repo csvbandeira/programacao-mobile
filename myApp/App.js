@@ -4,8 +4,8 @@ import { Text, View, Image, TextInput, TouchableHighlight } from "react-native";
 import { estilos } from "./src/styles/style";
 
 const App = () => {
-	let logo2 = require("./src/img/logo2.png");
-	let logo1 = require("./src/img/logo1.png");
+	let logo2 = require("./assets/img/img1.png");
+	let logo1 = require("./assets/img/img1.png");
 	let textoConteudo =
 		"No mundo do React Native, o componente Picker (selecionador) " +
 		"se refere a um componente que permite ao usuário escolher entre um conjunto de opções. \n \n" +
