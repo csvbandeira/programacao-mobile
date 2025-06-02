@@ -2,12 +2,13 @@ import { estilos } from "../styles/style";
 
 import { useState } from "react";
 import { View, Text, TextInput, TouchableHighlight } from "react-native";
-import { Picker } from "@react-native-picker/picker";
+import Slider from "@react-native-community/slider";
 
 const Body = () => {
 	const [color, setColor] = useState("#ffff00");
-	const [item, setItem] = useState("Selecione...");
+	const [backgroundColor, setBackgroundColor] = useState("#ffff00");
 	const [name, setName] = useState("");
+	const [textColor, setTextColor] = useState("#3fff");
 
 	const content =
 		"No mundo do React Native, o componente Picker (selecionador) " +
@@ -20,31 +21,50 @@ const Body = () => {
 	const blur = () => setColor("#ffff00");
 
 	const changeName = (name) => setName(name);
-	const handleItem = (index) => setItem(index);
+
+	const dragSlider = () => {
+		let random = "#" + Math.floor(Math.random() * 16777215).toString(16);
+		setTextColor(random);
+	};
+
+	const dragSlider2 = () => {
+		let random = "#" + Math.floor(Math.random() * 16777215).toString(16);
+		setBackgroundColor(random);
+	};
 
 	return (
-		<View id="conteudo" style={estilos.conteudo}>
+		<View
+			id="conteudo"
+			style={[estilos.conteudo, { backgroundColor: backgroundColor }]}
+		>
 			<Text style={estilos.textoConteudo}>{content}</Text>
 			<Text style={estilos.textoConteudo}>Digite seu nome:</Text>
 			<TextInput
-				style={[estilos.entradaTextoConteudo, { backgroundColor: color }]}
+				style={[estilos.entradaTextoConteudo, { backgroundColor: textColor }]}
 				onFocus={focused}
 				onBlur={blur}
 				value={name}
 				onChangeText={changeName}
 			/>
-			<Text style={estilos.textoConteudo}>Escolha uma das opções abaixo:</Text>
+			<Text style={estilos.textoConteudo}>Deslize o slider abaixo:</Text>
+			<Slider
+				id="Slider1"
+				style={{ width: "75%", marginTop: 30 }}
+				step={5}
+				minimumValue={0}
+				maximumValue={100}
+				onValueChange={dragSlider}
+			/>
 
-			<Picker
-				style={{ backgroundColor: "#1e90ff", height: 50 }}
-				selectedValue={item}
-				onValueChange={handleItem}
-			>
-				<Picker.Item label="Selecione..." value="Selecione" />
-				<Picker.Item label="Linguagem Java" value="Java" />
-				<Picker.Item label="Linguagem JS" value="JS" />
-				<Picker.Item label="Linguagem PHP" value="PHP" />
-			</Picker>
+			<Text style={estilos.textoConteudo}>Deslize o slider abaixo:</Text>
+			<Slider
+				id="Slider2"
+				style={{ width: "75%", marginTop: 30 }}
+				step={5}
+				minimumValue={0}
+				maximumValue={100}
+				onValueChange={dragSlider2}
+			/>
 
 			<TouchableHighlight onPress={verify} style={estilos.botaoConteudo}>
 				<Text
