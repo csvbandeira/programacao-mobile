@@ -6,6 +6,9 @@ import { Picker } from "@react-native-picker/picker";
 
 const Body = () => {
 	const [color, setColor] = useState("#ffff00");
+	const [item, setItem] = useState("Selecione...");
+	const [name, setName] = useState("");
+
 	const content =
 		"No mundo do React Native, o componente Picker (selecionador) " +
 		"se refere a um componente que permite ao usuário escolher entre um conjunto de opções. \n \n" +
@@ -16,6 +19,9 @@ const Body = () => {
 	const focused = () => setColor("orange");
 	const blur = () => setColor("#ffff00");
 
+	const changeName = (name) => setName(name);
+	const handleItem = (index) => setItem(index);
+
 	return (
 		<View id="conteudo" style={estilos.conteudo}>
 			<Text style={estilos.textoConteudo}>{content}</Text>
@@ -24,10 +30,16 @@ const Body = () => {
 				style={[estilos.entradaTextoConteudo, { backgroundColor: color }]}
 				onFocus={focused}
 				onBlur={blur}
+				value={name}
+				onChangeText={changeName}
 			/>
 			<Text style={estilos.textoConteudo}>Escolha uma das opções abaixo:</Text>
 
-			<Picker style={{ backgroundColor: "#1e90ff", height: 50 }}>
+			<Picker
+				style={{ backgroundColor: "#1e90ff", height: 50 }}
+				selectedValue={item}
+				onValueChange={handleItem}
+			>
 				<Picker.Item label="Selecione..." value="Selecione" />
 				<Picker.Item label="Linguagem Java" value="Java" />
 				<Picker.Item label="Linguagem JS" value="JS" />
