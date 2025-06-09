@@ -12,7 +12,7 @@ const Header = () => {
 				source={logo}
 			/>
 			<View>
-				<Text style={style.title}>Desafio 01</Text>
+				<Text style={style.title}>AULA 07 - DESAFIO 04</Text>
 				<Text style={style.subtitle}>Componente FlatList</Text>
 			</View>
 		</View>

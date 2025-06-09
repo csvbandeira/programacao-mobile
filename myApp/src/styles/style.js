@@ -7,14 +7,13 @@ export const style = StyleSheet.create({
 	},
 	header: {
 		flex: 0.15,
-		backgroundColor: "green",
 		flexDirection: "row",
 		justifyContent: "center",
 		alignItems: "center",
 	},
 	body: {
 		flex: 0.85,
-		backgroundColor: "skyBlue",
+		backgroundColor: "lightgray",
 	},
 	title: {
 		color: "red",
@@ -35,5 +34,9 @@ export const style = StyleSheet.create({
 		marginTop: 1,
 		marginHorizontal: 5,
 		paddingHorizontal: 10,
+	},
+	line: {
+		height: 2,
+		backgroundColor: "white",
 	},
 });
