@@ -5,33 +5,88 @@ import { style } from "../styles/style";
 const Body = () => {
 	const people = [
 		{
-			name: "Du",
-			email: "du@email.com",
-			course: "ADS",
-			photo: require("./../../assets/img/icon3.png"),
+			name: "Caraca, Muleke!",
+			singer: "Thiaguinho",
+			gender: "Pagode",
+			photo:
+				"https://images.icon-icons.com/3041/PNG/512/spotify_logo_icon_189218.png",
 		},
 		{
-			name: "Dudu",
-			email: "dudu@email.com",
-			course: "Enfermagem",
-			photo: require("./../../assets/img/icon3.png"),
+			name: "Deixa Acontecer",
+			singer: "Grupo Revelação",
+			gender: "Pagode",
+			photo:
+				"https://images.icon-icons.com/3041/PNG/512/spotify_logo_icon_189218.png",
 		},
 		{
-			name: "Edu",
-			email: "edu@email.com",
-			course: "Medicina",
-			photo: require("./../../assets/img/icon3.png"),
+			name: "Deixa Alagar",
+			singer: "Grupo Revelação",
+			gender: "Pagode",
+			photo:
+				"https://images.icon-icons.com/3041/PNG/512/spotify_logo_icon_189218.png",
+		},
+		{
+			name: "Moça",
+			singer: "Tiee",
+			gender: "Pagode",
+			photo:
+				"https://images.icon-icons.com/3041/PNG/512/spotify_logo_icon_189218.png",
+		},
+		{
+			name: "Pura Adrenalina",
+			singer: "Belo",
+			gender: "Pagode",
+			photo:
+				"https://images.icon-icons.com/3041/PNG/512/spotify_logo_icon_189218.png",
+		},
+		{
+			name: "Pé na Areia",
+			singer: "Thiaguinho",
+			gender: "Pagode",
+			photo:
+				"https://images.icon-icons.com/3041/PNG/512/spotify_logo_icon_189218.png",
+		},
+		{
+			name: "Telecine",
+			singer: "Dilsinho",
+			gender: "Pagode",
+			photo:
+				"https://images.icon-icons.com/3041/PNG/512/spotify_logo_icon_189218.png",
+		},
+		{
+			name: "Me perdoa",
+			singer: "Ferrugem, Iza",
+			gender: "Pagode",
+			photo:
+				"https://images.icon-icons.com/3041/PNG/512/spotify_logo_icon_189218.png",
+		},
+		{
+			name: "Disritmia",
+			singer: "Causarina",
+			gender: "Pagode",
+			photo:
+				"https://images.icon-icons.com/3041/PNG/512/spotify_logo_icon_189218.png",
+		},
+		{
+			name: "Camisa 10",
+			singer: "Turma do Pagode",
+			gender: "Pagode",
+			photo:
+				"https://images.icon-icons.com/3041/PNG/512/spotify_logo_icon_189218.png",
 		},
 	];
 
 	const showItems = ({ item }) => (
 		<View style={{ padding: 15 }}>
 			<View style={{ flexDirection: "row", padding: 5, gap: 10 }}>
-				<Image style={{ borderRadius: 50 }} source={item.photo} />
+				<Image
+					style={{ width: 50, height: 50, borderRadius: 50 }}
+					source={{ uri: item.photo }}
+				/>
 				<View>
-					<Text style={{ fontWeight: "bold" }}>{item.name}</Text>
-					<Text>{item.email}</Text>
-					<Text style={{ color: "blue" }}>{item.course}</Text>
+					<Text style={{ fontWeight: "bold" }}>{item.name.toUpperCase()}</Text>
+					<Text>{item.singer}</Text>
+					<Text style={{ color: "green" }}>{item.gender}</Text>
 				</View>
 			</View>
 			<View style={style.line} />
@@ -41,7 +96,7 @@ const Body = () => {
 	return (
 		<View id="conteudo" style={style.body}>
 			<Text style={{ alignSelf: "center", marginTop: 25 }}>
-				Lista de alunos
+				Lista de músicas
 			</Text>
 			<FlatList data={people} renderItem={showItems} />
 		</View>
