@@ -1,104 +1,59 @@
-import { View, Text, FlatList, Image } from "react-native";
+import { View, Text, Image, SectionList } from "react-native";
 
 import { style } from "../styles/style";
 
-const Body = () => {
-	const people = [
-		{
-			name: "Caraca, Muleke!",
-			singer: "Thiaguinho",
-			gender: "Pagode",
-			photo:
-				"https://images.icon-icons.com/3041/PNG/512/spotify_logo_icon_189218.png",
-		},
-		{
-			name: "Deixa Acontecer",
-			singer: "Grupo Revelação",
-			gender: "Pagode",
-			photo:
-				"https://images.icon-icons.com/3041/PNG/512/spotify_logo_icon_189218.png",
-		},
-		{
-			name: "Deixa Alagar",
-			singer: "Grupo Revelação",
-			gender: "Pagode",
-			photo:
-				"https://images.icon-icons.com/3041/PNG/512/spotify_logo_icon_189218.png",
-		},
-		{
-			name: "Moça",
-			singer: "Tiee",
-			gender: "Pagode",
-			photo:
-				"https://images.icon-icons.com/3041/PNG/512/spotify_logo_icon_189218.png",
-		},
-		{
-			name: "Pura Adrenalina",
-			singer: "Belo",
-			gender: "Pagode",
-			photo:
-				"https://images.icon-icons.com/3041/PNG/512/spotify_logo_icon_189218.png",
-		},
-		{
-			name: "Pé na Areia",
-			singer: "Thiaguinho",
-			gender: "Pagode",
-			photo:
-				"https://images.icon-icons.com/3041/PNG/512/spotify_logo_icon_189218.png",
-		},
-		{
-			name: "Telecine",
-			singer: "Dilsinho",
-			gender: "Pagode",
-			photo:
-				"https://images.icon-icons.com/3041/PNG/512/spotify_logo_icon_189218.png",
-		},
-		{
-			name: "Me perdoa",
-			singer: "Ferrugem, Iza",
-			gender: "Pagode",
-			photo:
-				"https://images.icon-icons.com/3041/PNG/512/spotify_logo_icon_189218.png",
-		},
-		{
-			name: "Disritmia",
-			singer: "Causarina",
-			gender: "Pagode",
-			photo:
-				"https://images.icon-icons.com/3041/PNG/512/spotify_logo_icon_189218.png",
-		},
-		{
-			name: "Camisa 10",
-			singer: "Turma do Pagode",
-			gender: "Pagode",
-			photo:
-				"https://images.icon-icons.com/3041/PNG/512/spotify_logo_icon_189218.png",
-		},
+const Body = (props) => {
+	const { name, data } = props;
+	const logo =
+		"https://images.icon-icons.com/3041/PNG/512/spotify_logo_icon_189218.png";
+
+	const titles = ["title1", "title2"];
+	const contents = [
+		["title1", "title2", "title3"],
+		["title4", "title5", "title6"],
 	];
 
-	const showItems = ({ item }) => (
-		<View style={{ padding: 15 }}>
-			<View style={{ flexDirection: "row", padding: 5, gap: 10 }}>
-				<Image
-					style={{ width: 50, height: 50, borderRadius: 50 }}
-					source={{ uri: item.photo }}
-				/>
-				<View>
-					<Text style={{ fontWeight: "bold" }}>{item.name.toUpperCase()}</Text>
-					<Text>{item.singer}</Text>
-					<Text style={{ color: "green" }}>{item.gender}</Text>
-				</View>
-			</View>
-			<View style={style.line} />
+	const showObject = ({ item }) => (
+		<View>
+			<Text style={{ fontSize: 20 }}>{item}</Text>
+		</View>
+	);
+	const showHeader = ({ section }) => (
+		<View>
+			<Text style={{ fontSize: 30, fontWeight: "bold" }}>{section.title}</Text>
 		</View>
 	);
 
 	return (
-		<View id="conteudo" style={style.body}>
-			<Text style={{ alignSelf: "center", marginTop: 25 }}>
-				Lista de músicas
-			</Text>
-			<FlatList data={people} renderItem={showItems} />
+		<View id="conteudo" style={{ flex: 1 }}>
+			<View
+				style={{ flex: 0.4, justifyContent: "center", alignItems: "center" }}
+			>
+				<Image
+					style={{ height: 150, width: 150, resizeMode: "contain" }}
+					source={{ uri: logo }}
+				/>
+				<Text style={{ fontSize: 20, fontWeight: "bold" }}>Section List</Text>
+				<Text style={{ fontSize: 30 }}>Home</Text>
+			</View>
+			<View style={{ flex: 0.75, paddingHorizontal: 20 }}>
+				<SectionList
+					sections={[
+						{ title: titles[0], data: contents[(0, 0)] },
+						{ title: titles[1], data: contents[(1, 1)] },
+					]}
+					renderItem={showObject}
+					renderSectionHeader={showHeader}
+					key={(_, index) => index}
+				/>
+			</View>
+			<View
+				style={{ flex: 0.05, justifyContent: "center", alignItems: "center" }}
+			>
+				<Text>
+					DSV Mobile - {name} - {data}
+				</Text>
+			</View>
 		</View>
 	);
 };
