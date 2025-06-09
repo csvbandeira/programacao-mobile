@@ -1,75 +1,39 @@
 import { StyleSheet } from "react-native";
 
-export const estilos = StyleSheet.create({
-	area_fundo: {
+export const style = StyleSheet.create({
+	app: {
 		flex: 1,
-		backgroundColor: "#1e90ff",
+		padding: 10,
 	},
-	cabecalho: {
-		flex: 0.3,
-		backgroundColor: "#1e90ff",
-		marginTop: 25,
+	header: {
+		flex: 0.15,
+		backgroundColor: "green",
+		flexDirection: "row",
 		justifyContent: "center",
 		alignItems: "center",
 	},
-	textoCabecalho: {
+	body: {
+		flex: 0.85,
+		backgroundColor: "skyBlue",
+	},
+	title: {
+		color: "red",
 		fontSize: 30,
-		color: "#3fff",
 		fontWeight: "bold",
+		width: "100%",
+		textAlign: "center",
+		borderTopRightRadius: 20,
+		borderTopLeftRadius: 20,
 	},
-	imgCabecalho: {
-		width: 100,
-		height: 100,
-	},
-	conteudo: {
-		flex: 0.68,
-		justifyContent: "flex-start",
-		paddingHorizontal: 15,
-		paddingVertical: 25,
-		backgroundColor: "#ffff00",
-		borderTopLeftRadius: 25,
-		borderTopRightRadius: 25,
-		marginHorizontal: 10,
-		borderBottomWidth: 2,
-		borderBottomColor: "gray",
-	},
-	textoConteudo: {
-		color: "#1e90ff",
-		fontSize: 18,
-		textAlign: "justify",
-	},
-	entradaTextoConteudo: {
-		height: 45,
-		borderWidth: 1,
-		borderColor: "#222",
-		fontSize: 20,
-		padding: 10,
-		marginBottom: 10,
-	},
-	botaoConteudo: {
-		backgroundColor: "#1e90ff",
-		color: "#ffff00",
-		fontWeight: "bold",
-		marginTop: 20,
-		padding: 25,
-		width: 125,
-		alignSelf: "center",
-		borderRadius: 50,
-	},
-	rodape: {
-		flex: 0.08,
-		flexDirection: "row",
-		backgroundColor: "#ffff00",
-		justifyContent: "space-around",
-		alignItems: "center",
-	},
-	textoRodape: {
-		fontSize: 20,
-		color: "#1e90ff",
-		fontWeight: "bold",
-	},
-	imgRodape: {
-		width: 50,
-		height: 50,
+	subtitle: {
+		color: "blue",
+		fontSize: 25,
+		fontStyle: "italic",
+		backgroundColor: "darkorange",
+		borderBottomLeftRadius: 20,
+		borderBottomRightRadius: 20,
+		marginTop: 1,
+		marginHorizontal: 5,
+		paddingHorizontal: 10,
 	},
 });
