@@ -5,7 +5,7 @@ import { style } from "../styles/style";
 const Body = (props) => {
 	const { name, data } = props;
 	const logo =
-		"https://images.icon-icons.com/3041/PNG/512/spotify_logo_icon_189218.png";
+		"https://img.freepik.com/vetores-gratis/mapa-do-mundo-minimo-isolado-no-fundo-branco-com-sombra_1017-42608.jpg";
 
 	const continents = [
 		"África",
@@ -70,7 +70,12 @@ const Body = (props) => {
 				style={{ flex: 0.4, justifyContent: "center", alignItems: "center" }}
 			>
 				<Image
-					style={{ height: 150, width: 150, resizeMode: "contain" }}
+					style={{
+						height: 150,
+						width: 150,
+						borderRadius: 250,
+						resizeMode: "contain",
+					}}
 					source={{ uri: logo }}
 				/>
 				<Text style={{ fontSize: 20, fontWeight: "bold" }}>Section List</Text>
