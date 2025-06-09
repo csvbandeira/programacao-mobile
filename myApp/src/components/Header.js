@@ -13,7 +13,7 @@ const Header = () => {
 			/>
 			<View>
 				<Text style={style.title}>AULA 07 - DESAFIO 04</Text>
-				<Text style={style.subtitle}>Componente FlatList</Text>
+				<Text style={style.subtitle}>COMPONENTE FLATLIST</Text>
 			</View>
 		</View>
 	);
